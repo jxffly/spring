@@ -4,10 +4,10 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="spring" />
+          <element id="module-output" name="spring-mvc" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="spring/web/Web" />
+      <element id="javaee-facet-resources" facet="spring-mvc/web/Web" />
     </root>
   </artifact>
 </component>
