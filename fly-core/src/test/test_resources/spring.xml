@@ -19,6 +19,6 @@
     <context:component-scan base-package="com.fly"/>
 
     <aop:aspectj-autoproxy proxy-target-class="true" expose-proxy="true"/>
-    <!--<import resource="spring-mybatis.xml"/>-->
-
+    <import resource="spring-mybatis.xml"/>
+    <bean id="beanA" class="com.fly.user.servic.impl.UserServiceImpl"/>
 </beans>
