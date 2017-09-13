@@ -5,7 +5,6 @@ import com.fly.common.model.mapper.UserMapper;
 import com.fly.user.model.Person;
 import com.fly.user.model.Teacher;
 import com.fly.user.service.UserService;
-import com.youzan.sz.common.annotation.ValidateParams;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +27,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @ValidateParams(includeProperties = {"age"},excludeProperties = {"age","name","bindId"})
     public int save(Person p,Teacher teacher) {
         if(LOGGER.isInfoEnabled()){
             LOGGER.info("开始进行员工的添加:{}",p);
