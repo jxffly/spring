@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.youzan.platform:track-appender:0.0.9-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/youzan/platform/track-appender/0.0.9-SNAPSHOT/track-appender-0.0.9-20160425.090718-6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/youzan/platform/track-appender/0.0.9-SNAPSHOT/track-appender-0.0.9-20160425.090718-6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/youzan/platform/track-appender/0.0.9-SNAPSHOT/track-appender-0.0.9-20160425.090718-6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

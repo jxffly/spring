@@ -19,6 +19,26 @@
     <context:component-scan base-package="com.fly"/>
 
     <aop:aspectj-autoproxy proxy-target-class="true" expose-proxy="true"/>
-    <!--<import resource="spring-mybatis.xml"/>-->
-
+    <import resource="spring-mybatis.xml"/>
+    <import resource="task.xml"/>
+    <import resource="ano-task.xml"/>
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
+        <!-- 这里配置将使用上面国际化配置的messageSource -->
+        <property name="validationMessageSource" ref="messageSource"/>
+    </bean>
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource" >
+        <property name="useCodeAsDefaultMessage" value="true"/>
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="fallbackToSystemLocale" value="true"/>
+        <property name="cacheSeconds" value="60"></property>
+        <property name="basenames">
+            <list>
+            </list>
+        </property>
+    </bean>
+<!--
+    <bean id="validateAspect" class="com.fly.common.aspect.ValidateParamsAspect" depends-on="validator"/>
+-->
+    <!--<bean id="validateAspect" class="com.youzan.sz.common.aspect.ValidateParamsAspect" depends-on="validator"/>-->
 </beans>

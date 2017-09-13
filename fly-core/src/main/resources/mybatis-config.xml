@@ -14,8 +14,8 @@
         <setting name="mapUnderscoreToCamelCase" value="true" />
     </settings>
 
-    <typeHandlers>
-        <typeHandler handler="com.fly.common.mybatis.EnumTypeHandler" javaType="com.fly.common.model.RoleEnum" />
-    </typeHandlers>
+    <!--<typeHandlers>-->
+        <!--<typeHandler handler="com.fly.common.mybatis.EnumTypeHandler" javaType="com.fly.common.model.RoleEnum" />-->
+    <!--</typeHandlers>-->
 
 </configuration>

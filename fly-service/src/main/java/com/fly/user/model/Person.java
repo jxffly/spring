@@ -1,24 +1,40 @@
 package com.fly.user.model;
 
+
+
+
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.Range;
+
+import java.io.Serializable;
 import java.util.Date;
+
+import javax.validation.constraints.NotNull;
+
 
 /**
  * Created by jinxiaofei on 16/10/17.
  */
-public class Person {
-    private int bind_id;
+public class Person implements Serializable{
+    @NotNull
+    private Integer bindId;
+    @NotBlank
+    @Length(min = 10,max = 20,message = "呵呵,名称长度10到20位!")
     private String name;
+    @Range(min = 1,max=199,message = "年龄必须是1到199岁")
     private int age;
     private int role;
+    private int bid;
     private Date createTime;
     private Date updateTime;
 
-    public int getBind_id() {
-        return bind_id;
+    public Integer getBindId() {
+        return bindId;
     }
 
-    public void setBind_id(int bind_id) {
-        this.bind_id = bind_id;
+    public void setBindId(Integer bindId) {
+        this.bindId = bindId;
     }
 
     public String getName() {
@@ -45,6 +61,14 @@ public class Person {
         this.role = role;
     }
 
+    public int getBid() {
+        return bid;
+    }
+
+    public void setBid(int bid) {
+        this.bid = bid;
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -64,10 +88,11 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "bind_id=" + bind_id +
+                "bind_id=" + bindId +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", role=" + role +
+                ", bid=" + bid +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
                 '}';
