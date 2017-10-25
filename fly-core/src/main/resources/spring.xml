@@ -16,9 +16,10 @@
         </property>
     </bean>
     <!-- scan package -->
-    <context:component-scan base-package="com.fly"/>
-
-    <aop:aspectj-autoproxy proxy-target-class="true" expose-proxy="true"/>
+    <context:component-scan base-package="com.fly">
+        <context:include-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/>
+    </context:component-scan>
+   <aop:aspectj-autoproxy proxy-target-class="true" expose-proxy="true"/>
     <import resource="spring-mybatis.xml"/>
     <import resource="task.xml"/>
     <import resource="ano-task.xml"/>

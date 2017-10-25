@@ -14,7 +14,9 @@
 
     <name>fly-core</name>
     <url>http://www.myorganization.org</url>
-
+    <properties>
+        <logback.version>0.1.4</logback.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -36,6 +38,10 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
         </dependency>
 
 
@@ -117,10 +123,6 @@
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
-            <groupId>net.sf.ehcache</groupId>
-            <artifactId>ehcache-core</artifactId>
-        </dependency>
 
 
         <dependency>
@@ -138,7 +140,7 @@
         <dependency>
             <groupId>org.logback-extensions</groupId>
             <artifactId>logback-ext-spring</artifactId>
-
+            <version>${logback.version}</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish</groupId>
@@ -163,12 +165,44 @@
             <groupId>org.quartz-scheduler</groupId>
             <artifactId>quartz</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.youzan.sz</groupId>
-            <artifactId>common-utils</artifactId>
-            <version>1.0.3-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>aspectj-maven-plugin</artifactId>
+                <version>1.8</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <privateScope>true</privateScope>
+                    <showWeaveInfo>true</showWeaveInfo>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <complianceLevel>1.8</complianceLevel>
+                    <!-- <encoding>UTF-8</encoding> -->
+                    <verbose>false</verbose>
+                    <outxml>true</outxml>
+                    <aspectLibraries>
+                        <!-- 此处定义外部的aspect包，例如spring的事务aspect包 。这里引用的包必须在依赖中声明 -->
+                        <!--
+                          <aspectLibrary>
+                             <groupId>org.springframework</groupId>
+                             <artifactId>spring-aspects</artifactId>
+                         </aspectLibrary>
+                        -->
+                    </aspectLibraries>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>       <!-- use this goal to weave all your main classes -->
+                            <goal>test-compile</goal>  <!-- use this goal to weave all your test classes -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
