@@ -3,6 +3,7 @@ CREATE TABLE `class_room` (
   `name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4;
+
 CREATE TABLE `student` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `t_id` int(11) DEFAULT NULL,
@@ -12,6 +13,7 @@ CREATE TABLE `student` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uniq_id` (`t_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+
 CREATE TABLE `teacher` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
