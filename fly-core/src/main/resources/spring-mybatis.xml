@@ -61,9 +61,7 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <!-- 配置事务异常封装 -->
-    <bean id="persistenceExceptionTranslationPostProcessor"
-          class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+
 
     <!--<context:load-time-weaver/>-->
     <!-- enables scanning for @Transactional annotations -->

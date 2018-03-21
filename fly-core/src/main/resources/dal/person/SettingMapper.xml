@@ -40,5 +40,8 @@
     <insert id="saveClassRoom" keyProperty="id">
         INSERT  INTO  class_room (id,name) VALUES (#{id},#{name})
     </insert>
+    <select id="findByName" resultType="com.fly.user.model.Student">
+        SELECT  * FROM student WHERE  `name`=#{name}
+    </select>
 
 </mapper>

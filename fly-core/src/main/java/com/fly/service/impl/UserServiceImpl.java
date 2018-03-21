@@ -194,7 +194,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Student findByName() {
-        //return userMapper.findByName("飞");
-        return null;
+        return userMapper.findByName("飞");
     }
 }
